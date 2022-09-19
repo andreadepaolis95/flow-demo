@@ -19,8 +19,11 @@ app.get('/', function(request, response) {
   }
   response.render('index.html', { env: envName});
 });
+console.log('Helloooo');
 
-app.listen(app.get('port'), function() {
+app.listen(app.get('port'), function(err) {
+  if(err) console.log(err);
+  
   console.log("Node app running at localhost:" + app.get('port'));
 });
 
